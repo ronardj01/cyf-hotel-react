@@ -1,7 +1,6 @@
 import React from "react";
 
 function Card(props) {
-  console.log(props);
   return (
     <div className="card border border-info">
       <img src={props.img} alt="Image of place" />

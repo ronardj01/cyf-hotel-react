@@ -11,8 +11,8 @@ function Footer() {
   return (
     <div className="footer">
       <ul className="list-group">
-        {arrayFooter.map(element => (
-          <FooterList element={element} />
+        {arrayFooter.map((element, index) => (
+          <FooterList key={`footer-${index}`} element={element} />
         ))}
       </ul>
     </div>
