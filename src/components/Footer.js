@@ -9,7 +9,7 @@ let arrayFooter = [
 
 function Footer() {
   return (
-    <div className="footer">
+    <div className="footer mt-5 pb-3">
       <ul className="list-group">
         {arrayFooter.map((element, index) => (
           <FooterList key={`footer-${index}`} element={element} />

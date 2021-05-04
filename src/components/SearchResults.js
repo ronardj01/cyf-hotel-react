@@ -1,14 +1,18 @@
 import React from "react";
+import moment from "moment";
 
 function SearchResults(props) {
   const { results } = props;
   return (
-    <table className="table">
+    <table className="table table-striped table-sm">
       <thead>
         <tr>
           {Object.keys(results[0]).map((element, index) => (
-            <th key={`th-${index}`}>{element}</th>
+            <th scope="col" key={`th-${index}`}>
+              {element}
+            </th>
           ))}
+          <th scope="col">number of nights</th>
         </tr>
       </thead>
       <tbody>
@@ -17,6 +21,10 @@ function SearchResults(props) {
             {Object.values(result).map((element, index) => (
               <td key={`td-${index}`}>{element}</td>
             ))}
+            <td key={`duration-${index}`}>{`Has a booking for ${moment(
+              result.checkOutDate,
+              "YYYY-MM-DD"
+            ).diff(moment(result.checkInDate), "days")} nigths.`}</td>
           </tr>
         ))}
       </tbody>
