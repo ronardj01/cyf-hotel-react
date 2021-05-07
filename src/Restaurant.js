@@ -9,8 +9,8 @@ const Restaurant = () => {
     <div className="container mt-5">
       <h3>Restaurant Orders</h3>
       <ul className="list-group-flush">
-        {orderTypes.map(orderType => (
-          <Order orderType={orderType} />
+        {orderTypes.map((orderType, index) => (
+          <Order orderType={orderType} key={`order-${index}`} />
         ))}
       </ul>
     </div>
