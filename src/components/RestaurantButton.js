@@ -1,9 +1,9 @@
 import React from "react";
 
 function RestaurantButton(props) {
-  const { BtnFunction } = props;
+  const { whenClick } = props;
   return (
-    <button className="btn btn-primary" onClick={BtnFunction}>
+    <button className="btn btn-primary" onClick={whenClick}>
       Add
     </button>
   );
