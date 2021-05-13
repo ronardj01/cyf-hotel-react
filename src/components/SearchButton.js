@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchButton() {
+function SearchButton({ searchInput, whenClick }) {
   return (
     <div className="search">
       <div className="page-header">
@@ -16,6 +16,8 @@ function SearchButton() {
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
+                value={searchInput}
+                onChange={whenClick}
               />
               <button className="btn btn-primary">Search</button>
             </div>

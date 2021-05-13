@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import BookingRow from "./BookingRow";
 
-function SearchResults(props) {
-  const { results } = props;
-
+function SearchResults({ results }) {
   return (
     <table className="table table-striped table-sm">
       <thead>
