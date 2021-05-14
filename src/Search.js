@@ -1,15 +1,24 @@
 import React, { useState } from "react";
 import SearchButton from "./components/SearchButton";
 
-const Search = () => {
+const Search = ({ search }) => {
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearchInput = event => {
     setSearchInput(event.target.value);
-    console.log(event.target.value);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    search = searchInput;
+    console.log(search);
   };
   return (
-    <SearchButton searchInput={searchInput} whenClick={handleSearchInput} />
+    <SearchButton
+      searchInput={searchInput}
+      whenKeyup={handleSearchInput}
+      whenClick={handleSubmit}
+    />
   );
 };
 
